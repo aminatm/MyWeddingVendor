@@ -1,0 +1,17 @@
+<h1 class="main-text">Welcome Back!</h1>
+<div class="secondary-text" align="center"> Sign in to see all of your saved vendors or manage your business.</div>
+<%= form_tag(@user) do %>
+<div class="user-form">
+<div class ="field">
+  <%= label_tag :email %>
+  <%= text_field_tag :email %>
+</div>
+<div class ="field">
+	<%= label_tag :password %>
+	<%= password_field_tag :password %>
+</div>
+<div class ="action">
+	<%= submit_tag "Log in"%>
+</div>
+</div>
+<% end %>

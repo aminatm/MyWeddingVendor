@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @listing.name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @listing.description %>
+</p>
+
+<p>
+  <strong>Category:</strong>
+  <%= @listing.category %>
+</p>
+
+<%= link_to 'Add to favorites', add_follower_listings_path(@listing) %> |
+<%= link_to 'Edit', edit_listing_path(@listing) %> |
+<%= link_to 'Back', listings_path %>

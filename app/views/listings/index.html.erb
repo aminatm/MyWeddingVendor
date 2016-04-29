@@ -1,0 +1,25 @@
+<h1>Vendor Listings</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Category</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @listings.each do |listing| %>
+      <tr>
+        <td><%= link_to listing.name, listing %></td>
+        <td><%= listing.description %></td>
+        <td><%= listing.category %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Listing', new_listing_path %>

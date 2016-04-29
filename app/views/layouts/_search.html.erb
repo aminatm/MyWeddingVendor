@@ -1,0 +1,23 @@
+
+<script type="text/javascript">
+window.onload = function(){ 
+	//Get submit button
+	var submitbutton = document.getElementById("search-input");
+	//Add listener to submit button
+	if(submitbutton.addEventListener){
+		submitbutton.addEventListener("click", function() {
+			if (submitbutton.value == 'What type of vendor do you need? Ex. caterer'){//Customize this text string to whatever you want
+				submitbutton.value = '';
+			}
+		});
+	}
+}
+</script>
+<div id="search-bar" align = "center">
+	<%= form_tag listings_path, :method => 'get', :id => 'search-form'  do %>
+   <%= text_field_tag :search, params[:search], :placeholder => 'Ex. Makeup Artist', :id => 'search-text'%>
+   <%= submit_tag "Search", :name => nil  %>
+ <% end %>
+ 
+</div>
+

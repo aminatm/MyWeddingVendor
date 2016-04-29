@@ -1,0 +1,19 @@
+<nav>
+  <ul>
+  <li style ="float:left"><a class="nav-btn" href="/">MyWeddingVendor</a></li>
+  <li><a class="nav-btn" href="/listings">View Vendors</a></li>
+  <%if logged_in? %>
+  <%if !is_vendor? %>
+  <li><a class="nav-btn" href="/listings/new">Become a vendor</a></li>
+  <% end %>
+  <% @user = current_user%>
+  <li><%=link_to 'My Profile', @user, method: :get%></li>
+  <li><%=link_to 'Log out', logout_path(current_user), method: :delete%></li>
+  <% else %>
+  <li><a class="nav-btn" href="/users/new">Become a vendor</a></li>
+  <li><a class="nav-btn" href="/login">Log in</a></li>
+  <li><a class="nav-btn" href="/users/new">Sign up</a></li>
+  <% end %>
+</ul>
+</nav>
+
