@@ -15,8 +15,8 @@ class ApplicationController < ActionController::Base
     !current_user.listings.empty?
   end
 
-   def add_follower
+  def add_follower
     @listing = Listing.find(params[:id])
     @listing.users << current_user
-  end
+ end
 end

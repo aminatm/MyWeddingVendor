@@ -28,7 +28,7 @@ class VendorsController < ApplicationController
     @user = current_user
     @vendor.user = @user
     if @vendor.save
-      redirect_to @vendor, notice: 'Vendor was successfully created.' 
+      redirect_to @vendor, notice: 'Vendor was successfully created.'
     else
       render :new
     end
@@ -59,13 +59,14 @@ class VendorsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_vendor
-      @vendor = Vendor.find(params[:id])
-    end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def vendor_params
-      params.require(:vendor).permit(:name, :description, :category, :user_id)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_vendor
+    @vendor = Vendor.find(params[:id])
+  end
+
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def vendor_params
+    params.require(:vendor).permit(:name, :description, :category, :user_id)
+  end
 end
