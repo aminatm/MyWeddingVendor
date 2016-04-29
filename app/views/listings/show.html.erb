@@ -1,5 +1,4 @@
 <p id="notice"><%= notice %></p>
-
 <p>
   <strong>Name:</strong>
   <%= @listing.name %>
@@ -16,8 +15,8 @@
 </p>
 
 <p>
-  <strong>User:</strong>
-  <%= @listing.user %>
+  <strong>Contact:</strong>
+  <%= @listing.user.email %>
 </p>
 
 <%= link_to 'Edit', edit_listing_path(@listing) %> |

@@ -14,9 +14,4 @@ class ApplicationController < ActionController::Base
   helper_method def is_vendor?
     !current_user.listings.empty?
   end
-
-  def add_follower
-    @listing = Listing.find(params[:id])
-    @listing.users << current_user
- end
 end
