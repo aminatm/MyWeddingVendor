@@ -11,7 +11,7 @@
 </p>
 
 <p>
-	<% if !@user.listings.empty? %>
+	
 	<strong>My Listings:</strong>
 	<%@user.listings.each do |listing| %>
 	<p>
@@ -23,7 +23,7 @@
 	</p>
 	<p>Category: <%=listing.category%></p>
 	<p><%=listing.description%></p>
-	<% end %>
+	
 </p>
 <% end %>
 <% if current_user == @user  %>

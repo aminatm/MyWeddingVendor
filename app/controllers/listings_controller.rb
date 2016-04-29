@@ -21,18 +21,11 @@ class ListingsController < ApplicationController
   def edit
   end
 
-  def add_follower
-    @listing = Listing.includes(:users).find(params[:format])
-    @listing.users << current_user
-    redirect_to @listing
-  end
-
   # POST /listings
   def create
     @listing = Listing.new(listing_params)
     @user = current_user
-    @user.listings << @listing
-    @listing.creator_id = @user.id
+    @listing.user = @user
     if @listing.save
       redirect_to @listing, notice: 'Listing was successfully created.' 
     else

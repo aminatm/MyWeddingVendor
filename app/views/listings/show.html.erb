@@ -15,6 +15,10 @@
   <%= @listing.category %>
 </p>
 
-<%= link_to 'Add to favorites', add_follower_listings_path(@listing) %> |
+<p>
+  <strong>User:</strong>
+  <%= @listing.user %>
+</p>
+
 <%= link_to 'Edit', edit_listing_path(@listing) %> |
 <%= link_to 'Back', listings_path %>

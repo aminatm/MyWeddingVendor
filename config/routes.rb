@@ -1,9 +1,7 @@
 MyWeddingVendor::Application.routes.draw do
   resources :vendors
+  resources :listings
   resources :users 
-  resources :listings do
-    get 'add_follower', :on => :collection
-  end
 
   get '/login', to: 'sessions#new'
   post '/login', to: 'sessions#create'

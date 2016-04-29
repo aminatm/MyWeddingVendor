@@ -47,6 +47,10 @@ class UsersController < ApplicationController
     end
   end
 
+  def add_favorite(listing)
+    @user.listings << listing
+  end
+
   # DELETE /users/1
   # DELETE /users/1.json
   def destroy
