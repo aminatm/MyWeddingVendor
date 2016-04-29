@@ -1,6 +1,6 @@
 MyWeddingVendor::Application.routes.draw do
   resources :vendors
-  resources :listings
+  resources :listings  
   resources :users 
 
   get '/login', to: 'sessions#new'
